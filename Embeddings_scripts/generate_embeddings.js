@@ -30,6 +30,22 @@ async function run() {
   const products = await productsRes.json();
 
   for (const product of products) {
+
+    const checkRes = await fetch(
+    `${process.env.SUPABASE_URL}/rest/v1/product_embeddings?product_id=eq.${product.id}`,
+    {
+      headers: {
+        apikey: process.env.SUPABASE_SERVICE_KEY,
+        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}`,
+      },
+    }
+  );
+
+  const existing = await checkRes.json();
+  if (existing.length > 0) {
+    console.log(`Ya existe embedding para: ${product.name}, se omite.`);
+    continue;
+  }
     const embedding = await getEmbedding(product.description);
 
     const insertRes = await fetch(`${process.env.SUPABASE_URL}/rest/v1/product_embeddings`, {

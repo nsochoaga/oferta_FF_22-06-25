@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 
+const GEMINI_KEY = Deno.env.get("GEMINI_API_KEY")?.trim();
+
 serve(async (req) => {
   // 🔄 Manejo de preflight (CORS)
   if (req.method === "OPTIONS") {
@@ -18,7 +20,7 @@ serve(async (req) => {
     const { prompt } = await req.json();
 
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBSQFk6q1Qt1sfsUkSimU9jGW9mePgywUM",
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
