@@ -25,6 +25,11 @@ Puedes probar la versión en vivo del marketplace en el siguiente enlace:
 - **Voice Agent**: Gemini Live SDK (Google AI Studio)
 - **Función personalizada**: Supabase Edge Function (`rag-assistant`) que recupera el producto más relevante por embeddings y genera la respuesta IA.
 
+### Repositorios:
+
+Supabase functions: https://github.com/nsochoaga/oferta_FF_22-06-25  
+Lovable-repositori: https://github.com/nsochoaga/supabase-product-cards
+
 ---
 
 ## 🛠️ Cómo funciona
@@ -76,7 +81,15 @@ SUPABASE_KEY=...
 
 ## 📹 Demo Video
 
-➡️ [Demo en YouTube](https://youtube.com/...) _(por subir)_
+➡️ [Demo en YouTube](https://www.youtube.com/watch?v=pnk4ODQMsXc)
+
+---
+
+## Generate embeddings.js
+
+cd Embeddings_scripts
+npm install
+node generate_embeddings.js
 
 ---
 
