@@ -1,0 +1,4 @@
+[functions.gemini-assistant]
+  runtime = "edge"
+  region = "aws-us-east-1"
+  verify_jwt = false

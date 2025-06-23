@@ -1,0 +1,14 @@
+# Ignorar node_modules
+node_modules/
+**/node_modules/
+
+# Ignorar logs y dotenv
+*.log
+.env
+
+# Opcional: ignorar sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
